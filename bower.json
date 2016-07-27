@@ -1,0 +1,24 @@
+{
+  "name": "frontend-boilerplate",
+  "authors": [
+    "Lucas buetto de Angelis <buetto.angelis@gmail.com>"
+  ],
+  "description": "Project model AngularJS with Bootstrap",
+  "main": "bower.json",
+  "license": "MIT",
+  "homepage": "lucasbuetto.com.br",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "^1.5.8",
+    "bootstrap": "^3.3.6",
+    "angular": "^1.5.8",
+    "jquery": "^2.2.4",
+    "angular-animate": "^1.5.8"
+  }
+}

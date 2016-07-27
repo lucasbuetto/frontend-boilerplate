@@ -1,1 +1,72 @@
-"# frontend-boilerplate" 
+## Front-End Boilerplate v1.0.0
+
+This repository is designed to create a new web project using AngularJS and Bootstrap
+with automation of minification processes files, bundle, build SASS and more soon ...
+
+------
+Jump to:
+  [Prerequisites](#Prerequisites) |
+  [Dependencies](#Dependencies) |
+  [Features](#Features) |
+  [How to begin](#how-to-begin)
+------
+
+### Prerequisites
+- [NodeJS v4.4.5+](https://nodejs.org/en/download/current/)
+- [Git v2.8.1+](https://git-scm.com/download/)
+
+### Dependencies
+- [Bower v1.7.9+](https://bower.io/#install-bower)
+- [gulp v3.9.1+](http://gulpjs.com/)
+- [browser-sync v2.13.0](https://www.browsersync.io/)
+- [gulp-cssnano v2.1.2](https://www.npmjs.com/package/gulp-cssnano)
+- [gulp-htmlmin v2.0.0](https://www.npmjs.com/package/gulp-htmlmin)
+- [gulp-if v2.0.1](https://www.npmjs.com/package/gulp-if)
+- [gulp-sass v2.3.2](https://www.npmjs.com/package/gulp-sass)
+- [gulp-uglify v1.5.4](https://www.npmjs.com/package/gulp-uglify)
+- [gulp-useref v3.1.0](https://www.npmjs.com/package/gulp-useref)
+- [Angular v1.5.8](https://angularjs.org/)
+- [Bootstrap v3.3.8](http://getbootstrap.com/)
+
+*These dependencies are automatically generated when you run the install bower and npm install*
+
+------
+
+### Features
+
+- SASS compiler for .sass and .scss file extensions.
+- Check creation and update files using the .html extension, .scss, .sass, .js and .json. 
+And updated browser using browser-sync.
+- Optimization and design creation to distribution version to amplify site performance.
+- File Bundle CSS and JavaScript through simple comments HTML file.
+- Minification HTML, CSS and JavaScript to the output directory.
+- Node server for execution and local test development environment and optimized distribution environment.
+
+-----
+
+## How to begin
+
+- Install [NodeJS](https://nodejs.org/en/)
+
+Clone this repository.
+
+```shell
+git clone https://github.com/lucasbuetto/frontend-boilerplate.git
+```
+
+-----
+
+Using this bower command for install angularjs and bootstrap:
+
+```shell
+bower install
+```
+
+-----
+
+and npm for install other dependencies:
+
+```shell
+npm install
+```
+
