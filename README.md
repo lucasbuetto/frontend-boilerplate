@@ -53,20 +53,24 @@ And updated browser using browser-sync.
 ```shell
 git clone https://github.com/lucasbuetto/frontend-boilerplate.git
 ```
-3- Run bower install to install AngularJS and Bootstrap.
-```shell
-bower install
-```
 
-4- Run npm install to install node modules.
+3- Run npm install to install node modules.
 ```shell
 npm install
+```
+
+4- Run bower install to install AngularJS and Bootstrap.
+```shell
+bower install
 ```
 
 5- Run gulp startServer to start node server in http://localhost:3000
 ```shell
 gulp startServer
 ```
+
+After starting the server, access the test url optimized version to deploy through this url:
+http://localhost:3000/www
  
 
 
