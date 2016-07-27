@@ -8,7 +8,8 @@ Jump to:
   [Prerequisites](#Prerequisites) |
   [Dependencies](#Dependencies) |
   [Features](#Features) |
-  [How to begin](#how-to-begin)
+  [Getting start](#getting-start)
+  
 ------
 
 ### Prerequisites
@@ -44,29 +45,28 @@ And updated browser using browser-sync.
 
 -----
 
-## How to begin
+## Getting start
 
-- Install [NodeJS](https://nodejs.org/en/)
+1- Install [NodeJS](https://nodejs.org/en/)
 
-Clone this repository.
-
+2- Clone this repository.
 ```shell
 git clone https://github.com/lucasbuetto/frontend-boilerplate.git
 ```
-
------
-
-Using this bower command for install angularjs and bootstrap:
-
+3- Run 
 ```shell
 bower install
 ```
-
------
-
-and npm for install other dependencies:
-
+ to install AngularJS and Bootstrap.
+4- Run
 ```shell
 npm install
 ```
+ to install node modules.
+5- Run 
+```shell
+gulp startServer
+```
+ to start node server in http://localhost:3000
+
 
