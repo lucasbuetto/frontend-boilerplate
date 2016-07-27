@@ -5,9 +5,9 @@ with automation of minification processes files, bundle, build SASS and more soo
 
 ------
 Jump to:
-  [Prerequisites](#Prerequisites) |
-  [Dependencies](#Dependencies) |
-  [Features](#Features) |
+  [Prerequisites](#prerequisites) |
+  [Dependencies](#dependencies) |
+  [Features](#features) |
   [Getting start](#getting-start)
   
 ------
