@@ -36,7 +36,7 @@ Jump to:
 ### Features
 
 - SASS compiler for .sass and .scss file extensions.
-- Check creation and update files using the .html extension, .scss, .sass, .js and .json. 
+- Check files creation and update using the .html, .scss, .sass, .js, and .json extensions. 
 And updated browser using browser-sync.
 - Optimization and design creation to distribution version to amplify site performance.
 - File Bundle CSS and JavaScript through simple comments HTML file.
