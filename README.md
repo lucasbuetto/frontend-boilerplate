@@ -5,10 +5,11 @@ with automation of minification processes files, bundle, build SASS and more soo
 
 ------
 Jump to:
-  [Prerequisites](#Prerequisites) |
-  [Dependencies](#Dependencies) |
-  [Features](#Features) |
-  [How to begin](#how-to-begin)
+  [Prerequisites](#prerequisites) |
+  [Dependencies](#dependencies) |
+  [Features](#features) |
+  [Getting start](#getting-start)
+  
 ------
 
 ### Prerequisites
@@ -35,7 +36,7 @@ Jump to:
 ### Features
 
 - SASS compiler for .sass and .scss file extensions.
-- Check creation and update files using the .html extension, .scss, .sass, .js and .json. 
+- Check files creation and update using the .html, .scss, .sass, .js, and .json extensions. 
 And updated browser using browser-sync.
 - Optimization and design creation to distribution version to amplify site performance.
 - File Bundle CSS and JavaScript through simple comments HTML file.
@@ -44,29 +45,30 @@ And updated browser using browser-sync.
 
 -----
 
-## How to begin
+## Getting start
 
-- Install [NodeJS](https://nodejs.org/en/)
+1- Install [NodeJS](https://nodejs.org/en/)
 
-Clone this repository.
-
+2- Clone this repository.
 ```shell
 git clone https://github.com/lucasbuetto/frontend-boilerplate.git
 ```
 
------
-
-Using this bower command for install angularjs and bootstrap:
-
-```shell
-bower install
-```
-
------
-
-and npm for install other dependencies:
-
+3- Run npm install to install node modules.
 ```shell
 npm install
 ```
 
+4- Run bower install to install AngularJS and Bootstrap.
+```shell
+bower install
+```
+
+5- Run gulp startServer to start node server in http://localhost:3000
+```shell
+gulp startServer
+```
+
+After starting the server, access the test url optimized version to deploy through this url:
+
+http://localhost:3000/www
