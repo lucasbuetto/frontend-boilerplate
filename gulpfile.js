@@ -10,28 +10,19 @@ var
     cssNano = require('gulp-cssnano'),
     imagemin = require('gulp-imagemin'),
     cache = require('gulp-cache'),
+    zip = require('gulp-zip'),
+    gulpSequence = require('gulp-sequence'),
+    clean = require('gulp-clean'),
 
     //paths
     devDir = "app",
-    distDir = "www",
+    distDir = "dist",
     sassFiles = 'app/assets/sass/**/*.sass',
     scssFiles = 'app/assets/scss/**/*.scss',
-    fontFiles = 'app/assets/fonts/**/*',
     imageFiles = 'app/assets/images/**/*.+(png|jpg|jpeg|gif|svg)',
     jsFiles = 'app/**/*.js',
     jsonFiles = 'app/**/*.json',
     htmlFiles = 'app/**/*.html';
-
-gulp.task('fonts', function () {
-    return gulp.src(fontFiles)
-        .pipe(gulp.dest(distDir + '/fonts'))
-});
-
-gulp.task('images', function () {
-    return gulp.src(imageFiles)
-        .pipe(cache(imagemin()))
-        .pipe(gulp.dest(distDir + '/assets/images'))
-});
 
 gulp.task('sassCompiler', function () {
     return gulp.src([scssFiles, sassFiles])
@@ -39,7 +30,17 @@ gulp.task('sassCompiler', function () {
         .pipe(gulp.dest('app/assets/css'))
 });
 
-gulp.task('projectOptimizer', function () {
+gulp.task('imageOptimazer', function () {
+    return gulp.src(imageFiles)
+        .pipe(cache(imagemin({
+            optimizationLevel: 8,
+            progressive: true,
+            interlaced: true
+        })))
+        .pipe(gulp.dest(distDir + '/assets/images'))
+});
+
+gulp.task('projectOptimazer', function () {
     return gulp.src(htmlFiles)
         .pipe(useref())
         .pipe(gulpIf('*.js', jsUglify()))
@@ -53,7 +54,10 @@ gulp.task('watch', function () {
         ['sassCompiler', browserSync.reload]
     );
     gulp.watch([jsFiles, jsonFiles, htmlFiles],
-        ['projectOptimizer', browserSync.reload]
+        ['projectOptimazer', browserSync.reload]
+    );
+    gulp.watch(imageFiles,
+        ['imageOptimazer', browserSync.reload]
     );
 });
 
@@ -63,21 +67,33 @@ gulp.task('browserSync', function () {
             baseDir: devDir,
             routes: {
                 '/bower_components': 'bower_components',
-                '/www': distDir
+                '/dist': distDir
             }
         }
     })
 });
 
-gulp.task('build', [
-    'fonts',
-    'images',
+gulp.task('startServer', [
+    'browserSync',
+    'watch',
     'sassCompiler',
-    'projectOptimizer',
+    'imageOptimazer',
+    'projectOptimazer'
 ]);
 
-gulp.task('startServer', [
-    'build',
-    'watch',
-    'browserSync'
-]);
+gulp.task('clearDist', function () {
+    return gulp.src(distDir + '/buildProject.zip', {read: false})
+        .pipe(clean());
+});
+
+gulp.task('zipDist', function () {
+    return gulp.src(distDir + '/**/*')
+        .pipe(zip('buildProject.zip'))
+        .pipe(gulp.dest(distDir))
+});
+
+gulp.task('build', gulpSequence(
+    ['sassCompiler', 'imageOptimazer', 'projectOptimazer'],
+    ['clearDist'],
+    ['zipDist']
+));
